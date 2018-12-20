@@ -8,12 +8,15 @@ public class PlayerMovement : MonoBehaviour
 	//Declare rb to make modifications to physics
 	public Rigidbody rb;
 
+	//Declare t to check position
+	public Transform t;
+
 	//in c# you need to include an f at the end of the value here to signify that it's a float
-	public float depthForce = 2000f;
+	public float depthForce = 1000f;
 
-	public float horizontalForce = 2000f;
+	public float horizontalForce = 1000f;
 
-	public float verticalForce = 2000f;
+	public float verticalForce = 1000f;
 
 	void Start()
 	{
@@ -57,10 +60,12 @@ public class PlayerMovement : MonoBehaviour
 			rb.AddForce(0, verticalForce * Time.deltaTime, 0);
 		}
 
+		/*
 		if(Input.GetKey(KeyCode.LeftShift))
 		{
 			rb.AddForce(0, -verticalForce * Time.deltaTime, 0);
 		}
+		*/
 
     	}
 }

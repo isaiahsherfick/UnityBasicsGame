@@ -192,9 +192,9 @@ GameObject:
   - component: {fileID: 527723236}
   - component: {fileID: 527723235}
   - component: {fileID: 527723234}
-  - component: {fileID: 527723233}
   - component: {fileID: 527723237}
   - component: {fileID: 527723238}
+  - component: {fileID: 527723233}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -202,8 +202,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &527723233
-BoxCollider:
+--- !u!135 &527723233
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -213,7 +213,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &527723234
 MeshRenderer:
@@ -259,7 +259,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527723232}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &527723236
 Transform:
   m_ObjectHideFlags: 0
@@ -285,7 +285,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -302,10 +302,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee1ede0eff647844abde9fc47d7dfb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  depthForce: 2000
-  horizontalForce: 2000
-  verticalForce: 2000
+  rb: {fileID: 527723237}
+  t: {fileID: 527723236}
+  depthForce: 500
+  horizontalForce: 500
+  verticalForce: 500
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +319,7 @@ GameObject:
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
   - component: {fileID: 534669907}
+  - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -342,8 +344,8 @@ Camera:
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.13333331, g: 0.69803923, b: 0.32016742, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -389,6 +391,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534669906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b06b9d41273c7947be8eb47837d5977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 527723236}
+  offset: {x: 0, y: 0, z: -5}
 --- !u!54 &534669907
 Rigidbody:
   m_ObjectHideFlags: 0
