@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
 	public float horizontalForce = 1000f;
 
-	public float verticalForce = 1000f;
+	public float verticalForce = 10000f;
 
 	void Start()
 	{

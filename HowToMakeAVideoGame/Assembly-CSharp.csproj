@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CameraFollow.cs" />
+     <Compile Include="Assets\PlayerCollision.cs" />
      <Compile Include="Assets\PlayerMovement.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/isaia/Github/UnityBasicsGame/HowToMakeAVideoGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
